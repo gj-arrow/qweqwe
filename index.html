@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="NADI — студия красоты в Минске. Стрижки, окрашивание, уход за волосами, маникюр, педикюр, брови. Запишитесь онлайн!">
+  <meta name="keywords" content="студия красоты Минск, стрижки Минск, окрашивание волос, маникюр Минск, педикюр, брови">
+  <meta name="author" content="NADI Studio">
+  <meta property="og:title" content="NADI | Студия красоты | Минск">
+  <meta property="og:description" content="Стрижки • Окрашивание • Уход • Маникюр • Педикюр • Брови">
+  <meta property="og:type" content="website">
+  <title>NADI | Студия красоты | Минск</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23C9A96E'/%3E%3Ctext x='50' y='68' text-anchor='middle' font-family='serif' font-size='55' font-weight='bold' fill='white'%3EN%3C/text%3E%3C/svg%3E">
+  <link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAA5UlEQVR4nO2WQUoDQRBFa3QhiOABvIB6AA/gCbyCRxDxAK7cuXHrTkEQQRDBhRtFEMSFIAgiKP5AQRjHpKu7Zyb9oKGZma761e+qbsiyjP+8MoAbYAqMA3NgBtwCM+AK655xjee7zv45lAEQ4A7c4R6YAxPgBvhjA3x6jO99wDPO8bFwAe4qj5c2wB3uK4+WNsAd7isPljbAHf4rD5Y2wB3uKw+WNsAd7isPljbAHf4rD5Y2wB3uKw+WNsAd7isPljbAHf4rD5Y2wB3uKw+WNsDdHfGJRsRbmgB3eKQnQCKRAEikIyCRCAEgEABAIQCAIAgAoigCkGUBSJIEAIqiAFAUBUBRFABKkgSgqqoC5Hl+5/n5+QESiQRAIpEASEgkEpIoioAkSdURQRAASJIEMMYYA5IkAZZlAZYkCYqigCzLACRJABCw9v+0LMvL4vLy8gwkSRIAU98Apm7wRMODg9+H+/v7M5AoigKAqqoCkOUBSJIEQJZlAEmSALSs/AutO8dZ+wAAAABJRU5ErkJggg==">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="top" style="position:absolute;top:0;left:0;width:1;height:1;overflow:hidden;"></div>
+
+  <!-- ========== HEADER ========== -->
+  <header class="header" id="header">
+    <div class="header__inner">
+      <a href="#top" class="header__logo">NADI</a>
+      <nav class="header__nav" id="nav">
+        <a href="#about" class="header__link">О нас</a>
+        <a href="#services" class="header__link">Услуги</a>
+        <a href="#pricing" class="header__link">Прайс</a>
+        <a href="#masters" class="header__link">Мастера</a>
+        <a href="#gallery" class="header__link">Галерея</a>
+        <a href="#reviews" class="header__link">Отзывы</a>
+        <a href="#contacts" class="header__link">Контакты</a>
+      </nav>
+      <button class="header__cta" onclick="openBookingWidget()">Записаться</button>
+      <button class="header__burger" id="burger" aria-label="Меню">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ========== HERO ========== -->
+  <section class="hero" id="hero">
+    <div class="hero__bg" style="background-image:url('assets/main.webp');background-size:cover;background-position:center;background-repeat:no-repeat;"></div>
+    <div class="hero__bg-overlay"></div>
+    <div class="hero__content">
+      <h1 class="hero__title">NADI</h1>
+      <p class="hero__subtitle">Студия красоты в Минске</p>
+      <p class="hero__services-list">Стрижки &bull; Окрашивание &bull; Уход &bull; Маникюр &bull; Педикюр &bull; Брови</p>
+      <button class="hero__cta btn btn--large" onclick="openBookingWidget()">Записаться</button>
+      <a href="https://www.instagram.com/nadi_studio_minsk/" target="_blank" rel="noopener" class="hero__instagram">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        @nadi_studio_minsk
+      </a>
+    </div>
+  </section>
+
+  <!-- ========== ABOUT ========== -->
+  <section class="about" id="about">
+    <div class="container">
+      <h2 class="section-title">О нас</h2>
+      <div class="about__content">
+        <div class="about__text">
+          <p>NADI — это пространство, где красота встречается с профессионализмом. Мы создали студию, в которой каждая деталь продумана для вашего комфорта: от уютной атмосферы до безупречного качества услуг.</p>
+          <p>Наши мастера — сертифицированные специалисты с многолетним опытом. Мы используем только профессиональные материалы премиум-класса и следим за последними трендами в индустрии красоты.</p>
+          <p>Индивидуальный подход к каждому клиенту — наш главный принцип. Мы подберём идеальный образ, который подчеркнёт вашу уникальность.</p>
+        </div>
+        <div class="about__image">
+          <img src="assets/1.jpeg" alt="NADI студия красоты" style="width:100%;border-radius:var(--radius);object-fit:cover;aspect-ratio:4/5;">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SERVICES ========== -->
+  <section class="services" id="services">
+    <div class="container">
+      <h2 class="section-title">Услуги</h2>
+      <div class="services__grid">
+        <div class="service-card">
+          <div class="service-card__icon">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="8 6 12 2 16 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
+          </div>
+          <h3 class="service-card__title">Стрижки</h3>
+          <p class="service-card__desc">Женские, мужские и детские стрижки любой сложности</p>
+          <button class="service-card__btn btn" onclick="openBookingWidget()">Записаться</button>
+        </div>
+        <div class="service-card">
+          <div class="service-card__icon">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M8 12s1.5-4 4-4 4 4 4 4-1.5 4-4 4-4-4-4-4z"/></svg>
+          </div>
+          <h3 class="service-card__title">Окрашивание</h3>
+          <p class="service-card__desc">Однотонное, балаяж, шатуш, аиртач и сложные техники</p>
+          <button class="service-card__btn btn" onclick="openBookingWidget()">Записаться</button>
+        </div>
+        <div class="service-card">
+          <div class="service-card__icon">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+          </div>
+          <h3 class="service-card__title">Уход за волосами</h3>
+          <p class="service-card__desc">Восстанавливающие процедуры и кератиновое выпрямление</p>
+          <button class="service-card__btn btn" onclick="openBookingWidget()">Записаться</button>
+        </div>
+        <div class="service-card">
+          <div class="service-card__icon">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3 class="service-card__title">Маникюр</h3>
+          <p class="service-card__desc">Классический, аппаратный, комбинированный маникюр</p>
+          <button class="service-card__btn btn" onclick="openBookingWidget()">Записаться</button>
+        </div>
+        <div class="service-card">
+          <div class="service-card__icon">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+          </div>
+          <h3 class="service-card__title">Педикюр</h3>
+          <p class="service-card__desc">Аппаратный и классический педикюр с уходом</p>
+          <button class="service-card__btn btn" onclick="openBookingWidget()">Записаться</button>
+        </div>
+        <div class="service-card">
+          <div class="service-card__icon">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>
+          </div>
+          <h3 class="service-card__title">Брови</h3>
+          <p class="service-card__desc">Коррекция, окрашивание и ламинирование бровей</p>
+          <button class="service-card__btn btn" onclick="openBookingWidget()">Записаться</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PRICING ========== -->
+  <section class="pricing" id="pricing">
+    <div class="container">
+      <h2 class="section-title">Прайс-лист</h2>
+      <div class="pricing__grid">
+        <div class="pricing__category">
+          <h3 class="pricing__category-title">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="8 6 12 2 16 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
+            Стрижки
+          </h3>
+          <div class="pricing__item">
+            <span class="pricing__item-name">Женская стрижка</span>
+            <span class="pricing__item-price">от 45 BYN</span>
+          </div>
+          <div class="pricing__item">
+            <span class="pricing__item-name">Мужская стрижка</span>
+            <span class="pricing__item-price">от 30 BYN</span>
+          </div>
+          <div class="pricing__item">
+            <span class="pricing__item-name">Детская стрижка</span>
+            <span class="pricing__item-price">от 25 BYN</span>
+          </div>
+          <div class="pricing__item">
+            <span class="pricing__item-name">Стрижка челки</span>
+            <span class="pricing__item-price">от 15 BYN</span>
+          </div>
+        </div>
+        <div class="pricing__category">
+          <h3 class="pricing__category-title">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 12s1.5-4 4-4 4 4 4 4-1.5 4-4 4-4-4-4-4z"/></svg>
+            Окрашивание
+          </h3>
+          <div class="pricing__item">
+            <span class="pricing__item-name">Однотонное окрашивание</span>
+            <span class="pricing__item-price">от 80 BYN</span>
+          </div>
+          <div class="pricing__item">
+            <span class="pricing__item-name">Балаяж / Шатуш</span>
+            <span class="pricing__item-price">от 120 BYN</span>
+          </div>
+          <div class="pricing__item">
+            <span class="pricing__item-name">Аиртач</span>
+            <span class="pricing__item-price">от 180 BYN</span>
+          </div>
+          <div class="pricing__item">
+            <span class="pricing__item-name">Тонирование</span>
+            <span class="pricing__item-price">от 60 BYN</span>
+          </div>
+        </div>
+        <div class="pricing__category">
+          <h3 class="pricing__category-title">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+            Уход за волосами
+          </h3>
+          <div class="pricing__item">
+            <span class="pricing__item-name">Кератиновое выпрямление</span>
+            <span class="pricing__item-price">от 150 BYN</span>
+          </div>
+          <div class="pricing__item">
+            <span class="pricing__item-name">Ботокс для волос</span>
+            <span class="pricing__item-price">от 130 BYN</span>
+          </div>
+          <div class="pricing__item">
+            <span class="pricing__item-name">Спа-уход</span>
+            <span class="pricing__item-price">от 70 BYN</span>
+          </div>
+        </div>
+        <div class="pricing__category">
+          <h3 class="pricing__category-title">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            Маникюр
+          </h3>
+          <div class="pricing__item">
+            <span class="pricing__item-name">Маникюр + покрытие гель-лак</span>
+            <span class="pricing__item-price">от 50 BYN</span>
+          </div>
+          <div class="pricing__item">
+            <span class="pricing__item-name">Наращивание ногтей</span>
+            <span class="pricing__item-price">от 80 BYN</span>
+          </div>
+          <div class="pricing__item">
+            <span class="pricing__item-name">Ремонт 1 ногтя</span>
+            <span class="pricing__item-price">от 5 BYN</span>
+          </div>
+        </div>
+        <div class="pricing__category">
+          <h3 class="pricing__category-title">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/></svg>
+            Педикюр
+          </h3>
+          <div class="pricing__item">
+            <span class="pricing__item-name">Педикюр + покрытие гель-лак</span>
+            <span class="pricing__item-price">от 65 BYN</span>
+          </div>
+          <div class="pricing__item">
+            <span class="pricing__item-name">Аппаратный педикюр</span>
+            <span class="pricing__item-price">от 50 BYN</span>
+          </div>
+        </div>
+        <div class="pricing__category">
+          <h3 class="pricing__category-title">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>
+            Брови
+          </h3>
+          <div class="pricing__item">
+            <span class="pricing__item-name">Коррекция бровей</span>
+            <span class="pricing__item-price">от 20 BYN</span>
+          </div>
+          <div class="pricing__item">
+            <span class="pricing__item-name">Окрашивание бровей</span>
+            <span class="pricing__item-price">от 25 BYN</span>
+          </div>
+          <div class="pricing__item">
+            <span class="pricing__item-name">Ламинирование бровей</span>
+            <span class="pricing__item-price">от 40 BYN</span>
+          </div>
+        </div>
+      </div>
+      <p class="pricing__note">* Точная стоимость зависит от длины волос, сложности работы и выбранных материалов. Уточняйте при записи.</p>
+    </div>
+  </section>
+
+  <!-- ========== MASTERS ========== -->
+  <section class="masters" id="masters">
+    <div class="container">
+      <h2 class="section-title">Наши мастера</h2>
+      <div class="masters__placeholder">
+        <div class="masters__placeholder-icon">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <p class="masters__placeholder-text">Скоро здесь появятся карточки наших мастеров</p>
+        <p class="masters__placeholder-sub">Мы тщательно подбираем профессионалов, которые разделяют наши ценности</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== GALLERY ========== -->
+  <section class="gallery" id="gallery">
+    <div class="container">
+      <h2 class="section-title">Галерея работ</h2>
+      <div class="gallery__grid">
+        <div class="gallery__item"><img src="assets/2.webp" alt="Работа NADI" style="width:100%;height:100%;object-fit:cover;border-radius:var(--radius-sm);"></div>
+        <div class="gallery__item"><img src="assets/3.webp" alt="Работа NADI" style="width:100%;height:100%;object-fit:cover;border-radius:var(--radius-sm);"></div>
+        <div class="gallery__item"><img src="assets/4.jpg" alt="Работа NADI" style="width:100%;height:100%;object-fit:cover;border-radius:var(--radius-sm);"></div>
+        <div class="gallery__item"><img src="assets/5.webp" alt="Работа NADI" style="width:100%;height:100%;object-fit:cover;border-radius:var(--radius-sm);"></div>
+        <div class="gallery__item"><img src="assets/6.jpg" alt="Работа NADI" style="width:100%;height:100%;object-fit:cover;border-radius:var(--radius-sm);"></div>
+        <div class="gallery__item"><img src="assets/1.jpeg" alt="Работа NADI" style="width:100%;height:100%;object-fit:cover;border-radius:var(--radius-sm);"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== REVIEWS ========== -->
+  <section class="reviews" id="reviews">
+    <div class="container">
+      <h2 class="section-title">Отзывы</h2>
+      <div class="reviews__carousel" id="reviewsCarousel">
+        <div class="reviews__track" id="reviewsTrack">
+          <div class="review-card">
+            <div class="review-card__stars">★★★★★</div>
+            <p class="review-card__text">Невероятная атмосфера и профессиональные мастера! Сделали идеальное окрашивание, как я и хотела. Обязательно вернусь снова!</p>
+            <p class="review-card__author">— Анна К.</p>
+          </div>
+          <div class="review-card">
+            <div class="review-card__stars">★★★★★</div>
+            <p class="review-card__text">Лучшая студия в Минске! Маникюр держится неделями, а брови всегда в идеальном состоянии. Рекомендую всем!</p>
+            <p class="review-card__author">— Мария С.</p>
+          </div>
+          <div class="review-card">
+            <div class="review-card__stars">★★★★★</div>
+            <p class="review-card__text">Наконец-то нашла своего мастера по стрижкам! Очень внимательное отношение и отличный результат. Спасибо NADI!</p>
+            <p class="review-card__author">— Елена В.</p>
+          </div>
+          <div class="review-card">
+            <div class="review-card__stars">★★★★★</div>
+            <p class="review-card__text">Уютная студия, приветливый персонал и потрясающий результат. Педикюр выполнен безупречно. Буду ходить только сюда!</p>
+            <p class="review-card__author">— Ольга Д.</p>
+          </div>
+          <div class="review-card">
+            <div class="review-card__stars">★★★★★</div>
+            <p class="review-card__text">Делала балаяж — результат превзошёл все ожидания! Мастера настоящие профессионалы. Очень довольна!</p>
+            <p class="review-card__author">— Дарья М.</p>
+          </div>
+        </div>
+        <button class="reviews__arrow reviews__arrow--prev" onclick="slideReviews(-1)">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        <button class="reviews__arrow reviews__arrow--next" onclick="slideReviews(1)">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== BOOKING FORM ========== -->
+  <section class="booking" id="booking">
+    <div class="container">
+      <h2 class="section-title">Онлайн запись</h2>
+      <div class="booking__content">
+        <form class="booking__form" id="bookingForm">
+          <div class="booking__field">
+            <label for="name" class="booking__label">Ваше имя</label>
+            <input type="text" id="name" name="name" class="booking__input" placeholder="Введите ваше имя" required>
+          </div>
+          <div class="booking__field">
+            <label for="phone" class="booking__label">Телефон</label>
+            <input type="tel" id="phone" name="phone" class="booking__input" placeholder="+375 (___) __-__-__" required>
+          </div>
+          <div class="booking__field">
+            <label for="service" class="booking__label">Услуга</label>
+            <select id="service" name="service" class="booking__input booking__select">
+              <option value="">Выберите услугу</option>
+              <option value="haircut">Стрижка</option>
+              <option value="coloring">Окрашивание</option>
+              <option value="care">Уход за волосами</option>
+              <option value="manicure">Маникюр</option>
+              <option value="pedicure">Педикюр</option>
+              <option value="brows">Брови</option>
+            </select>
+          </div>
+          <button type="submit" class="booking__submit btn btn--full">Отправить заявку</button>
+        </form>
+        <div class="booking__alternative">
+          <p class="booking__alternative-text">Или запишитесь через:</p>
+          <div class="booking__socials">
+            <a href="https://www.instagram.com/nadi_studio_minsk/" target="_blank" rel="noopener" class="booking__social booking__social--instagram">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" fill="white"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke="white" stroke-width="1.5"/></svg>
+              Instagram
+            </a>
+            <a href="https://www.threads.com/@nadi_studio_minsk" target="_blank" rel="noopener" class="booking__social booking__social--threads">
+              Threads
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CONTACTS ========== -->
+  <section class="contacts" id="contacts">
+    <div class="container">
+      <h2 class="section-title">Контакты</h2>
+      <div class="contacts__grid">
+        <div class="contacts__info">
+          <div class="contacts__item">
+            <div class="contacts__item-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div>
+              <h3 class="contacts__item-title">Адрес</h3>
+              <p class="contacts__item-text">г. Минск, ул. Лобанка 13/1</p>
+            </div>
+          </div>
+          <div class="contacts__item">
+            <div class="contacts__item-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div>
+              <h3 class="contacts__item-title">График работы</h3>
+              <p class="contacts__item-text">Пн-Пт: 9:00 — 20:00</p>
+              <p class="contacts__item-text">Сб: 9:00 — 19:00</p>
+              <p class="contacts__item-text">Вс: 9:30 — 18:00</p>
+            </div>
+          </div>
+          <div class="contacts__item">
+            <div class="contacts__item-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <div>
+              <h3 class="contacts__item-title">Запись по телефону</h3>
+              <p class="contacts__item-text"><a href="tel:+375173222616">+375 (17) 322-26-16</a></p>
+              <p class="contacts__item-text"><a href="tel:+375445819888">+375 (44) 581-98-88</a></p>
+            </div>
+          </div>
+          <div class="contacts__item">
+            <div class="contacts__item-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </div>
+            <div>
+              <h3 class="contacts__item-title">Запись в директе</h3>
+              <p class="contacts__item-text">Для записи обращайтесь в директ <a href="https://www.instagram.com/nadi_studio_minsk/" target="_blank" rel="noopener">@nadi_studio_minsk</a></p>
+            </div>
+          </div>
+          <div class="contacts__item">
+            <div class="contacts__item-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div>
+              <h3 class="contacts__item-title">Мы в соцсетях</h3>
+              <div class="contacts__socials-row">
+                <a href="https://www.instagram.com/nadi_studio_minsk/" target="_blank" rel="noopener" class="contacts__social-icon" aria-label="Instagram">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" fill="white"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke="white" stroke-width="1.5"/></svg>
+                </a>
+                <a href="https://www.threads.com/@nadi_studio_minsk" target="_blank" rel="noopener" class="contacts__social-icon" aria-label="Threads">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.73 4.5a3.5 3.5 0 0 0-3.5 3.5v7a3.5 3.5 0 0 0 7 0v-2h-2v2a1.5 1.5 0 0 1-3 0v-7a1.5 1.5 0 0 1 3 0h1.5V5h-1v-.5h2V4.5h-2zM8 12.5a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm8 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/></svg>
+                </a>
+                <a href="#" class="contacts__social-icon" aria-label="TikTok">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1v-3.5a6.37 6.37 0 0 0-.79-.05A6.34 6.34 0 0 0 3.15 15a6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.34-6.34V8.73a8.19 8.19 0 0 0 4.76 1.52V6.8a4.84 4.84 0 0 1-1-.11z"/></svg>
+                </a>
+                <a href="#" class="contacts__social-icon" aria-label="Telegram">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.479.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="contacts__map">
+          <!-- TODO: заменить на iframe Яндекс.Карт или Google Maps с реальным адресом -->
+          <iframe src="https://yandex.ru/map-widget/v1/?text=%D0%9C%D0%B8%D0%BD%D1%81%D0%BA%2C+%D1%83%D0%BB.%20%D0%9B%D0%BE%D0%B1%D0%B0%D0%BD%D0%BA%D0%B0+13+%D0%BA1" width="100%" height="100%" frameborder="0" allowfullscreen style="border:0;" loading="lazy"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <a href="#top" class="footer__logo">NADI</a>
+        <p class="footer__copy">&copy; 2026 NADI | Студия красоты. Все права защищены.</p>
+        <div class="footer__socials">
+          <a href="https://www.instagram.com/nadi_studio_minsk/" target="_blank" rel="noopener" class="footer__social" aria-label="Instagram">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" fill="white"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke="white" stroke-width="1.5"/></svg>
+          </a>
+          <a href="https://www.threads.com/@nadi_studio_minsk" target="_blank" rel="noopener" class="footer__social" aria-label="Threads">T</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========== STICKY MOBILE CTA ========== -->
+  <button class="sticky-cta" id="stickyCta" onclick="openBookingWidget()">Записаться</button>
+
+  <!-- ========== BOOKING MODAL (DIKIDI PLACEHOLDER) ========== -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal" id="modal">
+      <button class="modal__close" id="modalClose" aria-label="Закрыть">&times;</button>
+      <div class="modal__content">
+        <div class="modal__icon">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        </div>
+        <h3 class="modal__title">Онлайн-запись</h3>
+        <p class="modal__text">Скоро здесь будет доступна онлайн-запись через Dikidi!</p>
+        <p class="modal__text modal__text--sub">Для записи напишите нам в Instagram или позвоните</p>
+        <div class="modal__actions">
+          <a href="https://www.instagram.com/nadi_studio_minsk/" target="_blank" rel="noopener" class="btn btn--primary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" fill="white"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke="white" stroke-width="1.5"/></svg>
+            Написать в Instagram
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
