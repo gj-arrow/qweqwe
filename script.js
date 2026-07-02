@@ -2,41 +2,35 @@
    NADI STUDIO — JAVASCRIPT
    ============================================ */
 
-// --- DIKIDI WIDGET (PLACEHOLDER) ---
-// TODO: подключить Dikidi widget
-// Когда будет API-ключ, заменить заглушку на:
-// Dikidi.loadWidget({ clientId: 'XXX', shopId: 'YYY' });
-
-let bookingWidgetInitialized = false;
-
+// --- BOOKING WIDGET (модальное окно) ---
 function openBookingWidget() {
-  // TODO: заменить на реальное открытие виджета Dikidi
-  // Пример:
-  // if (window.Dikidi && window.Dikidi.openWidget) {
-  //   window.Dikidi.openWidget();
-  // }
-
-  // Показываем модальное окно-заглушку
   const overlay = document.getElementById('modalOverlay');
-  overlay.classList.add('active');
-  document.body.style.overflow = 'hidden';
+  resetModalContent();
+  showOverlay();
+}
 
-  // Отправка события аналитики
-  if (typeof gtag !== 'undefined') {
-    gtag('event', 'widget_open', {
-      event_category: 'booking',
-      event_label: 'dikidi_placeholder'
-    });
-  }
-  if (typeof ym !== 'undefined') {
-    ym(XXXXXX, 'reachGoal', 'widget_open');
-  }
+function showOverlay() {
+  document.getElementById('modalOverlay').classList.add('active');
+  document.body.style.overflow = 'hidden';
 }
 
 function closeBookingWidget() {
   const overlay = document.getElementById('modalOverlay');
   overlay.classList.remove('active');
   document.body.style.overflow = '';
+  // Сбрасываем содержимое модалки на стандартное
+  resetModalContent();
+}
+
+function resetModalContent() {
+  const modalContent = document.getElementById('modalContent');
+  if (!modalContent) return;
+  document.getElementById('modalIcon').innerHTML = `
+    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+  `;
+  document.getElementById('modalTitle').textContent = 'Онлайн-запись';
+  document.getElementById('modalText').textContent = 'Заполните форму на сайте, и мы свяжемся с вами';
+  document.getElementById('modalSub').textContent = 'Для записи напишите нам в Instagram или позвоните';
 }
 
 // --- MODAL ---
@@ -163,8 +157,20 @@ if (reviewsCarousel) {
   });
 }
 
-// --- BOOKING FORM ---
+// --- BOOKING FORM (serverless) ---
 const bookingForm = document.getElementById('bookingForm');
+
+function getServiceLabel(value) {
+  const labels = {
+    haircut: 'Стрижка',
+    coloring: 'Окрашивание',
+    care: 'Уход за волосами',
+    manicure: 'Маникюр',
+    pedicure: 'Педикюр',
+    brows: 'Брови'
+  };
+  return labels[value] || value;
+}
 
 if (bookingForm) {
   bookingForm.addEventListener('submit', function(e) {
@@ -179,27 +185,20 @@ if (bookingForm) {
       return;
     }
 
-    // TODO: подключить отправку данных на сервер
-    // Пример:
-    // fetch('/api/booking', {
-    //   method: 'POST',
-    //   headers: { 'Content-Type': 'application/json' },
-    //   body: JSON.stringify({ name, phone, service })
-    // });
+    // Показываем подтверждение в модальном окне
+    document.getElementById('modalIcon').innerHTML = `
+      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+    `;
+    document.getElementById('modalTitle').textContent = `${name}, спасибо за заявку!`;
+    document.getElementById('modalText').innerHTML = `
+      Услуга: <strong>${getServiceLabel(service)}</strong><br>
+      Телефон: <strong>${phone}</strong><br><br>
+      Мы свяжемся с вами для подтверждения записи.
+    `;
+    document.getElementById('modalSub').textContent = 'Или свяжитесь с нами прямо сейчас:';
 
-    alert(`Спасибо, ${name}! Ваша заявка принята. Мы свяжемся с вами для подтверждения записи.`);
+    showOverlay();
     bookingForm.reset();
-
-    // Событие аналитики
-    if (typeof gtag !== 'undefined') {
-      gtag('event', 'form_submit', {
-        event_category: 'booking',
-        event_label: service
-      });
-    }
-    if (typeof ym !== 'undefined') {
-      ym(XXXXXX, 'reachGoal', 'form_submit');
-    }
   });
 }
 
