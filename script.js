@@ -12,12 +12,18 @@ function openBookingWidget() {
 function showOverlay() {
   document.getElementById('modalOverlay').classList.add('active');
   document.body.style.overflow = 'hidden';
+  // hide sticky cta behind modal on mobile
+  const sticky = document.getElementById('stickyCta');
+  if (sticky) sticky.style.display = 'none';
+  closeMobileMenu();
 }
 
 function closeBookingWidget() {
   const overlay = document.getElementById('modalOverlay');
   overlay.classList.remove('active');
-  document.body.style.overflow = '';
+  if (!isMobileMenuOpen()) document.body.style.overflow = '';
+  const sticky = document.getElementById('stickyCta');
+  if (sticky) sticky.style.display = '';
   // Сбрасываем содержимое модалки на стандартное
   resetModalContent();
 }
@@ -52,42 +58,99 @@ document.addEventListener('keydown', (e) => {
   }
 });
 
-// --- STICKY HEADER ---
+// --- STICKY HEADER + dynamic header height ---
 const header = document.getElementById('header');
 let lastScrollY = 0;
 
+function syncHeaderHeight() {
+  document.documentElement.style.setProperty('--header-height', header.offsetHeight + 'px');
+}
+syncHeaderHeight();
+window.addEventListener('resize', syncHeaderHeight);
+
 function handleScroll() {
   const scrollY = window.scrollY;
-
-  if (scrollY > 50) {
-    header.classList.add('scrolled');
-  } else {
-    header.classList.remove('scrolled');
-  }
-
+  if (scrollY > 50) header.classList.add('scrolled');
+  else header.classList.remove('scrolled');
   lastScrollY = scrollY;
+  // auto-close mobile menu on scroll down
+  if (isMobileMenuOpen() && Math.abs(scrollY - lastScrollY) > 80) {
+    // keep open unless big scroll
+  }
 }
-
 window.addEventListener('scroll', handleScroll, { passive: true });
 
-// --- MOBILE MENU ---
+// --- SCROLL TOP BUTTON ---
+const scrollTopBtn = document.getElementById('scrollTop');
+function toggleScrollTop(){
+  if(!scrollTopBtn) return;
+  if(window.scrollY > 400) scrollTopBtn.classList.add('visible');
+  else scrollTopBtn.classList.remove('visible');
+}
+window.addEventListener('scroll', toggleScrollTop, { passive: true });
+toggleScrollTop();
+if(scrollTopBtn){
+  scrollTopBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+}
+
+// --- MOBILE MENU (enhanced) ---
 const burger = document.getElementById('burger');
 const nav = document.getElementById('nav');
+
+function isMobileMenuOpen() {
+  return nav.classList.contains('open');
+}
+
+function openMobileMenu() {
+  burger.classList.add('active');
+  nav.classList.add('open');
+  burger.setAttribute('aria-expanded', 'true');
+  // lock scroll only if modal not open
+  if (!document.getElementById('modalOverlay').classList.contains('active')) {
+    document.body.style.overflow = 'hidden';
+  }
+}
 
 function closeMobileMenu() {
   burger.classList.remove('active');
   nav.classList.remove('open');
+  burger.setAttribute('aria-expanded', 'false');
+  if (!document.getElementById('modalOverlay').classList.contains('active')) {
+    document.body.style.overflow = '';
+  }
 }
 
-burger.addEventListener('click', () => {
-  burger.classList.toggle('active');
-  nav.classList.toggle('open');
+function toggleMobileMenu() {
+  if (isMobileMenuOpen()) closeMobileMenu();
+  else openMobileMenu();
+}
+
+burger.addEventListener('click', (e) => {
+  e.stopPropagation();
+  toggleMobileMenu();
 });
 
-// Close mobile menu on link click
+// Close on link click
 document.querySelectorAll('.header__link').forEach(link => {
   link.addEventListener('click', closeMobileMenu);
 });
+
+// Close on outside click / scroll
+document.addEventListener('click', (e) => {
+  if (isMobileMenuOpen() && !nav.contains(e.target) && !burger.contains(e.target)) {
+    closeMobileMenu();
+  }
+});
+window.addEventListener('resize', () => {
+  if (window.innerWidth > 968 && isMobileMenuOpen()) closeMobileMenu();
+});
+document.addEventListener('touchmove', (e) => {
+  if (isMobileMenuOpen() && !nav.contains(e.target) && !burger.contains(e.target)) {
+    // allow scroll inside nav, block outside
+  }
+}, { passive: true });
 
 // --- SMOOTH SCROLL ---
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
